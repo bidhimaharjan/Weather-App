@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Icons -->
+        <script src="https://kit.fontawesome.com/167f70fb67.js" crossorigin="anonymous"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="BidhiMaharjan_2330526.css">
+        <!-- CSS for php file button  -->
+        <style>            
+            .seven-days-container{
+                float: left;
+            }
+
+            .seven-days-button{                
+                background-color: rgb(0, 0, 0);
+                border: none;
+                padding: 1rem 1rem;
+                font-size: 1rem;
+                margin: 2px;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+
+            .seven-days-button:hover{
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+
+            .seven-days-button a{
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+            }
+        </style>
+
+        <title>Weather</title>
+    </head>
+
+    <body>
+        <!-- Search Form -->
+        <form class="search-bar" method="post">
+            <input class="input-value" type="text" name="searched_city" placeholder="Search..." onfocus="this.value=''">
+            <button class="search-button" type="submit" name="submit"><i class="fas fa-magnifying-glass"></i></button>
+        </form>
+        
+        <!-- Last Week Weather Data Button -->
+        <div class="seven-days-container">
+            <button class="seven-days-button"><a href="seven_days.php">Last Week Weather</a></button>
+        </div> 
+
+        <!-- Main -->
+        <main class="display-content">
+            <section class="content-left">
+                <div id="city"></div>
+                <div id="day-date"></div>
+                <div id="weather-condition"></div>
+                <div id="weather-icon"></div>
+                <div id="temperature"></div>
+                <div id="max-min">
+                    <div id="max-temp"></div>
+                    <div id="min-temp"></div>
+                </div>    
+            </section>
+
+            <section class="content-right">
+                <div id="windspeed"></div>
+                <div id="pressure"></div>
+                <div id="humidity"></div>
+            </section>
+        </main>
+    
+        <!-- JavaScript -->
+        <script src="BidhiMaharjan_2330526.js"></script>
+    </body>
+</html>
