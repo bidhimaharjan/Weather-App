@@ -10,46 +10,20 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="BidhiMaharjan_2330526.css">
-        <!-- CSS for php file button  -->
-        <style>            
-            .seven-days-container{
-                float: left;
-            }
-
-            .seven-days-button{                
-                background-color: rgb(0, 0, 0);
-                border: none;
-                padding: 1rem 1rem;
-                font-size: 1rem;
-                margin: 2px;
-                cursor: pointer;
-                border-radius: 8px;
-            }
-
-            .seven-days-button:hover{
-                background-color: rgba(0, 0, 0, 0.2);
-            }
-
-            .seven-days-button a{
-                text-decoration: none;
-                color: rgb(255, 255, 255);
-            }
-        </style>
 
         <title>Weather</title>
     </head>
-
+    
     <body>
         <!-- Search Form -->
-        <form class="search-bar" method="post">
-            <input class="input-value" type="text" name="searched_city" placeholder="Search..." onfocus="this.value=''">
-            <button class="search-button" type="submit" name="submit"><i class="fas fa-magnifying-glass"></i></button>
+        <form id="search-bar">
+            <input id="input-value" type="text" name="searched_city" placeholder="Search..." onfocus="this.value=''">
+            <button id="search-button" type="submit" name="submit"><i class="fas fa-magnifying-glass"></i></button>
         </form>
-        
-        <!-- Last Week Weather Data Button -->
-        <div class="seven-days-container">
-            <button class="seven-days-button"><a href="seven_days.php">Last Week Weather</a></button>
-        </div> 
+
+        <form id="seven-days-container" method="post" action="SevenDays.html">
+            <button id="seven-days-button" name="data_page">Last Week Weather</button>
+        </form>
 
         <!-- Main -->
         <main class="display-content">

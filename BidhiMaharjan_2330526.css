@@ -19,7 +19,7 @@ body{
     color: var(--text-color);
 }
 
-.search-bar{
+#search-bar{
     float: right;
     width: 100%;
     max-width: 300px;
@@ -31,7 +31,7 @@ body{
     text-align: right;
 }
 
-.input-value{
+#input-value{
     background: transparent;
     flex: 1;
     border: 0;
@@ -44,7 +44,7 @@ body{
     color: var(--text-color);
 }
 
-.search-button{
+#search-button{
     width: 1.5rem;
     font-size: 1.1rem;
     background: transparent;
@@ -53,8 +53,27 @@ body{
     color: var(--text-color);
 }
 
-.search-button :hover{
+#search-button :hover{
     color: rgb(190, 190, 190);
+}
+
+#seven-days-container{
+    float: left;
+}
+
+#seven-days-button{                
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#seven-days-button:hover{
+     background-color: rgba(0, 0, 0, 0.2);
 }
 
 .display-content{
@@ -71,7 +90,7 @@ body{
     background: var(--background-color);
     border-radius: 15px;
     padding: 3rem;
-
+    margin-top: 0;
 }
 
 #city,
@@ -111,8 +130,7 @@ body{
 
 #windspeed,
 #pressure,
-#humidity,
-#feels-like{
+#humidity{
     background: var(--background-color);
     border-radius: 15px;
     padding: 2.5rem 3rem;
@@ -121,29 +139,86 @@ body{
     font-size: 1.2rem;
 }
 
+/* Styles for SevenDays.html */
+.home-button{
+    float: left;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    margin: 2px;
+    cursor: pointer; 
+    border-radius: 8px;
+}
+
+.home-button:hover{
+    background: rgba(0, 0, 0, 0.2); 
+}
+
+.home-button a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.table-container{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.seven-days-data{
+    background:rgba(0, 0, 0, 0.2); 
+    border-radius: 18px;
+}
+
+th{
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+tr{
+    text-align: center;
+}
+
+
 /* Media Queries */
 /* For medium devices */
 @media screen and (max-width: 768px){
-    .search-bar{
+    body{
+        margin-left: 1rem;
+    }
+    
+    #search-bar{
         float: none;
         margin: 1.5rem auto 0;
+    }
+
+    #seven-days-container{
+        float: none;
+        text-align: center;
+        margin-bottom: 0.25rem;
+    }
+
+    #seven-days-button{
+        font-size: 0.75rem;
+        margin-top: 1rem; 
     }
 
     .display-content{
         display: block;
         height: auto;
         padding: 1rem;
-        text-align: center;      
+        text-align: center;
     }
 
     .content-left {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .content-left{
-        padding: 2rem;
+        padding: 1rem;
     }
 
     #city{
@@ -170,20 +245,64 @@ body{
 
     #windspeed,
     #pressure,
-    #humidity,
-    #feels-like{
+    #humidity{
         padding: 1rem;
         margin: 1rem 1rem;
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         width: 27vw;
         text-align: center;
+    }
+
+    /* Styles for SevenDays.html */
+    .home-button{
+        padding: 0.75rem ;
+        font-size: 0.8rem;
+    }
+
+    h2{
+        font-size: 1.25rem;
+    }
+
+    .table-container{       
+        margin-top: 1.5rem;
+    }
+    
+    .seven-days-data{
+        border-collapse: collapse; /* Remove cell spacing */
+        width: 100%;
+    }
+    
+    th,
+    td{
+        padding: 0.5rem;
+    }
+
+    th{
+        font-size: 0.8rem;
+    }
+    
+    tr{
+        font-size: 0.8rem;
     }
 }
 
 /* For small devices */
 @media screen and (max-width: 468px){
     body{
-        margin: 0;
+        margin-left: 0.5rem;
+    }
+    
+    #search-bar{
+        max-width: 250px;
+        max-height: 2rem;
+    }
+
+    #seven-days-button{
+        padding: 0.75rem;
+    }
+
+    .display-content{
+        padding: 0.5rem;
     }
 
     .content-right {
@@ -196,15 +315,12 @@ body{
         font-size: 1.5rem;
     }
 
-    #day-date,
-    #weather-condition{
-        font-size: 1rem;
-    }
-
     #temperature{
         font-size: 3rem;
     }
 
+    #day-date,
+    #weather-condition,
     #max-temp,
     #min-temp{
         font-size: 1rem;
@@ -212,9 +328,14 @@ body{
 
     #windspeed,
     #pressure,
-    #humidity,
-    #feels-like{
+    #humidity{
         font-size: 1rem;
         width: 40vw;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h2{
+        font-size: 1rem;
     }
 }
